@@ -53,7 +53,7 @@ exports.checkOut = async (req, res) => {
 
     await db.query(
       `UPDATE attendance
-       SET check_out=CURRENT_TIME, status=$1
+       SET check_out=CURRENT_TIMESTAMP, status=$1
        WHERE employee_id=$2 AND date=$3`,
       [status, employee_id, today]
     );
