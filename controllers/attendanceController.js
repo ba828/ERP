@@ -17,7 +17,7 @@ exports.checkIn = async (req, res) => {
 
     await db.query(
       `INSERT INTO attendance (employee_id, date, check_in, status)
-       VALUES ($1,$2,CURRENT_TIME,'Present')`,
+       VALUES ($1,$2,CURRENT_TIMESTAMP,'Present')`,
       [employee_id, today]
     );
 
